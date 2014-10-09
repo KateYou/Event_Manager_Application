@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True" SettingsObjectName="EventManager.My.MySettings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Facilities" Member="Facilities">
+    <Type Name="Facility">
+      <Column Name="FName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FAddress" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FCity" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FZip" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="FState" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FContact" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FPhone" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FFax" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="FTaxID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FNotes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Attachments" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FWebsite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vendors" Member="Vendors">
+    <Type Name="Vendor">
+      <Column Name="VName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VType" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="VAddress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VCity" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VState" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VZip" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="VContact" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VPhone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="VFax" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="VTaxID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VInsurance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Attachments" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Website" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CommonCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMEvents" Member="EMEvents">
+    <Type Name="EMEvent">
+      <Column Name="EventName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventLocation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StartTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Caterer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bar" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Florist" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[A/V Rental]" Member="A_V_Rental" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Installer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Attachments" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CommonCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.InsertEvents" Method="InsertEvents">
+    <Parameter Name="EventName" Parameter="eventName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EventLocation" Parameter="eventLocation" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="StartTime" Parameter="startTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EndTime" Parameter="endTime" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
